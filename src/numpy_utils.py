@@ -43,69 +43,48 @@ NITS = [
 # SECCIÓN 1: ARRAYS Y TIPOS DE DATOS
 # ===========================================================================
 
+# def describir_array(arr):
+#     """
+#     Imprime la forma, el tipo de dato, el mínimo y el máximo de un array.
+
+#     Es un procedimiento: no retorna ningún valor.
+
+#     Args:
+#         arr (np.ndarray): Array de NumPy a describir.
+
+#     Ejemplo de salida con VALORES_DECLARADOS:
+#         Forma   : (8,)
+#         Tipo    : float64
+#         Mínimo  : 0.0
+#         Máximo  : 3200000.0
+#     """
+#     # TODO: imprime forma con arr.shape, tipo con arr.dtype,
+#     #       mínimo con arr.min() y máximo con arr.max()
 def describir_array(arr):
-    """
-    Imprime la forma, el tipo de dato, el mínimo y el máximo de un array.
-
-    Es un procedimiento: no retorna ningún valor.
-
-    Args:
-        arr (np.ndarray): Array de NumPy a describir.
-
-    Ejemplo de salida con VALORES_DECLARADOS:
-        Forma   : (8,)
-        Tipo    : float64
-        Mínimo  : 0.0
-        Máximo  : 3200000.0
-    """
-    # TODO: imprime forma con arr.shape, tipo con arr.dtype,
-    #       mínimo con arr.min() y máximo con arr.max()
-    pass
+    print(f"  Forma   : {arr.shape}")
+    print(f"  Tipo    : {arr.dtype}")
+    print(f"  Mínimo  : {arr.min()}")
+    print(f"  Máximo  : {arr.max()}")
 
 
 def crear_array_declaraciones(valores_lista):
-    """
-    Convierte una lista de Python en un array NumPy de tipo float64.
-
-    Args:
-        valores_lista (list): Lista de números.
-
-    Returns:
-        np.ndarray: Array de NumPy con dtype float64.
-
-    Ejemplo:
-        crear_array_declaraciones([1_000_000, 500_000, 2_000_000])
-        -> array([1000000., 500000., 2000000.])
-    """
-    # TODO: usa np.array con el parámetro dtype=np.float64
-    pass
+    return np.array(valores_lista, dtype=np.float64)
 
 
 def comparar_lista_vs_array(valores_lista):
-    """
-    Imprime la diferencia entre operar sobre una lista y sobre un array.
+    # Con lista: necesitamos un ciclo
+    iva_lista = []
+    for valor in valores_lista:
+        iva_lista.append(valor * 0.19)
 
-    Muestra que con una lista Python hay que usar un ciclo for para
-    multiplicar cada elemento, mientras que con un array basta con
-    escribir arr * 0.19.
+    # Con array: operación directa sobre todos los elementos
+    arr = np.array(valores_lista, dtype=np.float64)
+    iva_array = arr * 0.19
 
-    Es un procedimiento: no retorna ningún valor.
-
-    Args:
-        valores_lista (list): Lista de números de referencia.
-
-    Ejemplo de salida:
-        Lista (requiere ciclo for):
-          [285000.0, 161500.0, ..., 209000.0]
-        Array (operación directa):
-          [285000.   161500.   ...  209000.  ]
-    """
-    # TODO:
-    # 1. Calcula el IVA con ciclo for sobre valores_lista y guarda en iva_lista
-    # 2. Convierte valores_lista a array con np.array
-    # 3. Calcula el IVA multiplicando el array por 0.19 y guarda en iva_array
-    # 4. Imprime ambos resultados con etiquetas
-    pass
+    print("  Lista (requiere ciclo for):")
+    print(f"    {iva_lista}")
+    print("  Array (operación directa):")
+    print(f"    {iva_array}")
 
 
 def filtrar_valores_en_rango(valores_lista, minimo, maximo):
