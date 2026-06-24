@@ -88,31 +88,11 @@ def comparar_lista_vs_array(valores_lista):
 
 
 def filtrar_valores_en_rango(valores_lista, minimo, maximo):
-    """
-    Retorna una lista nueva con los valores que están entre minimo y maximo.
-
-    Recorre la lista con un ciclo for y usa un condicional para decidir
-    si cada valor entra en el rango. Esto retoma el ejercicio de listas
-    que no se cubrió en la sesión 3.
-
-    Args:
-        valores_lista (list): Lista de números a filtrar.
-        minimo (float): Límite inferior del rango (incluido).
-        maximo (float): Límite superior del rango (incluido).
-
-    Returns:
-        list: Valores que cumplen minimo <= valor <= maximo.
-
-    Ejemplo:
-        filtrar_valores_en_rango([100, 500, 1200, 30], 100, 1000)
-        -> [100, 500]
-    """
-    # TODO:
-    # 1. Crea una lista vacía para acumular los valores filtrados
-    # 2. Recorre valores_lista con un ciclo for
-    # 3. Si minimo <= valor <= maximo, agrégalo con .append()
-    # 4. Retorna la lista acumulada
-    pass
+    filtrados = []
+    for valor in valores_lista:
+        if minimo <= valor <= maximo:
+            filtrados.append(valor)
+    return filtrados
 
 
 # ===========================================================================
@@ -120,60 +100,15 @@ def filtrar_valores_en_rango(valores_lista, minimo, maximo):
 # ===========================================================================
 
 def obtener_rango(arr, inicio, fin):
-    """
-    Retorna los elementos del array entre las posiciones inicio y fin (excluido).
-
-    Args:
-        arr (np.ndarray): Array de NumPy.
-        inicio (int): Posición inicial (inclusive).
-        fin (int): Posición final (exclusiva).
-
-    Returns:
-        np.ndarray: Subarray con los elementos del rango.
-
-    Ejemplo:
-        obtener_rango(VALORES_DECLARADOS, 2, 5)
-        -> array([      0., 2300000.,  950000.])
-    """
-    # TODO: usa slicing con arr[inicio:fin]
-    pass
+    return arr[inicio:fin]
 
 
 def obtener_ultimos(arr, n):
-    """
-    Retorna los últimos n elementos del array.
-
-    Args:
-        arr (np.ndarray): Array de NumPy.
-        n (int): Número de elementos a retornar desde el final.
-
-    Returns:
-        np.ndarray: Subarray con los últimos n elementos.
-
-    Ejemplo:
-        obtener_ultimos(VALORES_DECLARADOS, 3)
-        -> array([ 450000., 1100000.])  (últimos 3 elementos)
-    """
-    # TODO: usa indexación negativa arr[-n:]
-    pass
+    return arr[-n:]
 
 
 def invertir_array(arr):
-    """
-    Retorna una copia del array con los elementos en orden invertido.
-
-    Args:
-        arr (np.ndarray): Array de NumPy.
-
-    Returns:
-        np.ndarray: Array con elementos en orden invertido.
-
-    Ejemplo:
-        invertir_array(np.array([1, 2, 3, 4]))
-        -> array([4, 3, 2, 1])
-    """
-    # TODO: usa slicing con paso -1: arr[::-1]
-    pass
+    return arr[::-1]
 
 
 # ===========================================================================

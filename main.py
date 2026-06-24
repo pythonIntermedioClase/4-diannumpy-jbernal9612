@@ -77,18 +77,17 @@ def menu_indexacion_slicing():
     print("\n--- Indexación y slicing ---")
 
     # TODO: descomenta cuando hayas implementado obtener_rango
-    # rango = obtener_rango(VALORES_DECLARADOS, 2, 5)
-    # print(f"\n  Posiciones 2 a 4: {rango}")
+    rango = obtener_rango(VALORES_DECLARADOS, 2, 5)
+    print(f"\n  Posiciones 2 a 4: {rango}")
 
     # TODO: descomenta cuando hayas implementado obtener_ultimos
-    # ultimos = obtener_ultimos(VALORES_DECLARADOS, 3)
-    # print(f"\n  Últimos 3 valores: {ultimos}")
+    ultimos = obtener_ultimos(VALORES_DECLARADOS, 3)
+    print(f"\n  Últimos 3 valores: {ultimos}")
 
     # TODO: descomenta cuando hayas implementado invertir_array
-    # invertido = invertir_array(VALORES_DECLARADOS)
-    # print(f"\n  Array invertido: {invertido}")
+    invertido = invertir_array(VALORES_DECLARADOS)
+    print(f"\n  Array invertido: {invertido}")
 
-    print("\n  (función pendiente de implementar)")
 
 
 def menu_vectorizacion():
